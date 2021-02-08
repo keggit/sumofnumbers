@@ -1,3 +1,5 @@
+const sumofnumbers = [1, 3, 4, 5];
+
 function sumFor(array) {
   let sum = 0;
   for (const number of array) {
@@ -23,10 +25,10 @@ function sumRecursion(array, sum) {
   return array.length === 0 ? sum : sumRecursion(array.slice(0, array.length - 1), sum + array[array.length - 1]);
 }
 
-console.log(sumRecursion(sumofnumbers));
+console.log(sumRecursion(sumofnumbers, 0));
 
 function sumTheSimpleWay(array) {
-  return _.reduce(array, (sum, item) => sum + item);
+  return _.reduce(array, (sum, item) => sum + item, 0);
 }
 
 console.log(sumTheSimpleWay(sumofnumbers));
